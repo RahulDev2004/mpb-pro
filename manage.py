@@ -11,7 +11,7 @@ def main():
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         print("Cannot import packages")
-    # execute_from_command_line(sys.argv)
+    execute_from_command_line(sys.argv)
 
 
 if __name__ == '__main__':
