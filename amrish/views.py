@@ -14,55 +14,10 @@ db_user = db.users
 db_courses = db.courses
 
 
-def signup(request):
-    if request.user.is_authenticated:
-        print("logedin")
-        return redirect('home')
-    elif request.method=="POST":
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        print(username,email,password)
-        if User.objects.filter(username=username).exists() and User.objects.filter(email=email).exists():messages.info(request, 'Username and Email already exists')
-        elif User.objects.filter(username=username).exists():messages.info(request, 'Username already exists')
-        elif User.objects.filter(email=email).exists():messages.info(request, 'Email already exists')
-        else:
-            user = User.objects.create_user(username, email, password)
-            db_user.insert_one({"username":username,"email":email,"password":password})
-            user = authenticate(request, username=username, password=password)
-            login(request, user)
-            return redirect("home")
-        return redirect("signup")
-    else:return render(request,'signup.html')
-
-def signin(request):
-    if request.user.is_authenticated:
-        if request.user.username=="amrish":return redirect("amrish")
-        else:return redirect("signin")
-        
-    elif request.method == 'POST':
-        username = request.POST["username"]
-        password = request.POST["password"]
-        if '@' in username:username = User.objects.get(email=username.lower()).username
-        user = authenticate(request, username=username, password=password)
-        print(user)
-        if user:
-            print("Signed In")
-            login(request, user)
-            if username=="amrish":return redirect("amrish")
-            return redirect("home")
-        else:messages.info(request, 'User not found')
-        return redirect("signin")
-    else:return render(request,'signin.html')
-
-def signout(request):
-    if request.user.is_authenticated:logout(request)
-    return redirect('signin')
-
 def index(request):
     return render(request, 'index.html')
 
-def home(request):
+def amrish(request):
     return render(request, 'home.html')
 
 def members(request):

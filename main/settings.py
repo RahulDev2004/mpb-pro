@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'amrish',
 ]
 
 MIDDLEWARE = [
@@ -69,13 +70,18 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+WSGI_APPLICATION = 'main.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# WSGI_APPLICATION = 'vercel_app.wsgi.app'
+# DATABASES = {}
 
-DATABASES = {}
 
 
 # Password validation

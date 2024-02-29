@@ -63,13 +63,14 @@
     <div class="wrapper">
         <section class="main__login" style="margin:0 30%" id="login-popup">
             <div class="login__inner">
-                <form class="login__form login-form" action="#">
+                <form class="login__form login-form" method="post">
+                    {% csrf_token %}
                     <div class="login-form__box login-form-box">
                         <label class="login-form-box__label" for="">
                             Username or Email
                         </label>
                         <div class="login-form-box__row">
-                            <input class="login-form-box__row-input" type="text">
+                            <input class="login-form-box__row-input" id="username" name="username" type="text">
                         </div>
                     </div>
                     <div class="login-form__box login-form-box">
@@ -77,7 +78,7 @@
                             Password
                         </label>
                         <div class="login-form-box__row">
-                            <input class="login-form-box__row-input" type="password">
+                            <input class="login-form-box__row-input" id="password" name="password" type="password">
                             <button class="login-form-box__row-btn">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="icons" clip-path="url(#clip0_215_18379)">
@@ -100,9 +101,7 @@
                             Forgot Password?
                         </a>
                     </div>
-                    <button class="login-form__button" type="submit">
-                        Log In
-                    </button>
+                    <input class="login-form__button" type="submit" value="Sign In"/>
                     <div class="login-form__socials login-form-socials">
                         <p class="login-form-socials__or">
                             <span></span>
