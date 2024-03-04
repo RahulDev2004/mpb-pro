@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Blogs | MyProBuddy{% endblock %}
+{% block main %}
+    <section class="main__blog blog">
+        <div class="container">
+            <h1 class="blog__title title">
+                Blog
+            </h1>
+            <div class="blog__filters-panel filters-panel">
+                <p class="filters-panel__text">
+                    Showing 1–8 of {{total_blogsx}} results
+                </p>
+                <form class="filters-panel__form filters-panel-form" action="#">
+                    <div class="filters-panel-form__search search">
+                        <button class="search__btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 19C15.4182 19 19 15.4183 19 11C19 6.58172 15.4182 3 11 3C6.58169 3 2.99997 6.58172 2.99997 11C2.99997 15.4183 6.58169 19 11 19Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M21 21L16.65 16.65" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <input class="search__input" type="text" placeholder="Search...">
+                    </div>
+                    <div class="filters-panel-form__select custom-select">
+                        <select>
+                            <option value="0">All Categories</option>
+                            <option value="1">All Categories</option>
+                            <option value="2">All Categories 2</option>
+                        </select>
+                    </div>
+                    <div class="filters-panel-form__select custom-select">
+                        <select>
+                            <option value="0">Order by Date</option>
+                            <option value="1">Order by Date</option>
+                            <option value="2">Order by Date 2</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="blog__inner">
+                <div class="blog__card card card--blog">
+                    <div class="card__inner">
+                        <a class="card-box__poster" href="{% url 'blogs-page' %}">
+                            <img class="card-box__poster-img" src="{%  static 'img/group-img-5.jpg' %}" alt="img">
+                        </a>
+                        <p class="card__suptext card__suptext--purple">
+                            marketing
+                        </p>
+                        <a class="card__title" href="{% url 'blogs-page' %}">
+                            6 Big Commerce Design Tips For Big Results
+                        </a>
+                        <p class="card__description">
+                            How do you design the kind of ecommerce site that will have products flying off your
+                            virtual shelves?
+                        </p>
+                        <ul class="card__list card-list">
+                            <li class="card-list__item">
+                                <p class="card-list__text">
+                                    January 13, 2022
+                                </p>
+                            </li>
+                            <li class="card-list__item">
+                                <p class="card-list__text">
+                                    5 Comments
+                                </p>
+                            </li>
+                            <li class="card-list__item">
+                                <a class="card-list__link" href="{% url 'blogs-page' %}">
+                                    by Valerie Fergusson
+                                    <img class="card-list__link-img" src="{%  static 'img/member-icon-24.png' %}"
+                                        alt="img">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="blog__paging paging">
+                <p class="paging__text">
+                    Showing 1–10 of {{total_blogs}} results
+                </p>
+                <ul class="paging__list">
+                    <li class="paging__list-item">
+                        <p class="paging__list-text">
+                            1
+                        </p>
+                    </li>
+                    <li class="paging__list-item">
+                        <a class="paging__list-link" href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.66663 4L12.1952 7.5286C12.4556 7.78894 12.4556 8.21106 12.1952 8.4714L8.66663 12M4.66663 4L8.19522 7.5286C8.45557 7.78894 8.45557 8.21106 8.19522 8.4714L4.66663 12"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

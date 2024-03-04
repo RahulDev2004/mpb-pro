@@ -1,0 +1,228 @@
+{% extends 'amrish/index.html' %}
+{% load static %}
+{% block title %}MyProBuddy | Courses{% endblock %}
+{% block main %}
+<section class="main__courses courses">
+    <div class="container">
+        <nav class="top-nav">
+            <ul>
+                <a href="{% url 'amrish-create-course' %}"><li><button>Create Course</button></li></a>
+                <a href="{% url 'amrish-course-enrolled' %}"><li><button>Enrolled</button></li></a>
+            </ul>
+        </nav>
+        <h1 class="courses__title title">
+            Courses
+        </h1>
+        <div class="courses__filters-panel filters-panel">
+            <div class="filters-panel__tags tags">
+                <a class="tags__tag tags__tag--active" href="#">
+                    All courses
+                    <span>
+                        17
+                    </span>
+                </a>
+                <a class="tags__tag tags__tag" href="#">
+                    Paid Courses
+                    <span>
+                        7
+                    </span>
+                </a>
+                <a class="tags__tag tags__tag" href="#">
+                    Free Courses
+                    <span>
+                        10
+                    </span>
+                </a>
+            </div>
+            <form class="filters-panel__form filters-panel-form" action="#">
+                <div class="filters-panel-form__search search">
+                    <button class="search__btn" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11 19C15.4182 19 19 15.4183 19 11C19 6.58172 15.4182 3 11 3C6.58169 3 2.99997 6.58172 2.99997 11C2.99997 15.4183 6.58169 19 11 19Z"
+                                stroke="var(--secondary-color)" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M21 21L16.65 16.65" stroke="var(--secondary-color)" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <input class="search__input" type="text" placeholder="Search...">
+                </div>
+                <div class="filters-panel-form__select custom-select">
+                    <select>
+                        <option value="0">Most Popular</option>
+                        <option value="1">Most Popular</option>
+                        <option value="2">Most Popular 2</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="courses__inner">
+            <!-- course here -->
+            {% for course in courses %}
+            <div class="courses__card card card--courses">
+                <div class="card__inner">
+                    <p class="card__suptext card__suptext--pink">
+                        {{course.course_category}}
+                    </p>
+                    <a href="edit-course/{{ course.oid }}"><button class="course-edit-btn">Edit</button></a>
+                    <style>
+                        .course-edit-btn{
+                            position: absolute;
+                            right: 0;
+                            color: var(--secondary-color);
+                            border: 1px solid var(--secondary-color);
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                        }
+                    </style>
+                    <a class="card__title" href="{% url 'view-course' course.oid %}">
+                        {{course.course_title}}
+                        <textarea cols="50" rows="2" name="course_title" id="course_title" placeholder="Course Title"></textarea>
+                    </a>
+                    <ul class="card__list card-list">
+                        <li class="card-list__item">
+                            <p class="card-list__rait">
+                                <span>
+                                    {{course.course_rating}}
+                                </span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="icons" clip-path="url(#clip0_114_9488)">
+                                        <path id="Vector"
+                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
+                                            fill="#F9D442" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_114_9488">
+                                            <rect width="12" height="12" fill="var(--secondary-color)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </p>
+                        </li>
+                        <li class="card-list__item">
+                            <p class="card-list__text">
+                                {{course.course_contains}}
+                            </p>
+                        </li>
+                        <li class="card-list__item">
+                            <p class="card-list__text">
+                                {{course.course_enrolled}} Students
+                            </p>
+                        </li>
+                        <li class="card-list__item">
+                            <a class="card-list__link" href="courses-page">
+                                by {{course.course_author}}
+                                <img class="card-list__link-img" src="{% static 'img/member-icon-12.png' %}" alt="img">
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="card-box__poster" href="courses-page">
+                        <img class="card-box__poster-img" src="{% static 'img/new/co1.jpg' %}" alt="img">
+                        <p class="card-box__poster-text">
+                            ₹{{course.course_price}}.00
+                        </p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        <div class="courses__paging paging">
+            <p class="paging__text">
+                Viewing 1 - 8 of 8 courses
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock main %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Create Course</h1>
+    <div>
+        <label for="course_title">Course Title</label>
+    </div>
+    <div>
+        <label for="course_description">Course Description</label>
+        <textarea cols="50" rows="5" name="course_description" id="course_description" placeholder="Short Description"></textarea>
+    </div>
+    <div>
+        <label for="course_price">Course Price</label>
+        <input type="number" name="course_price" id="course_price" placeholder="Course Price">
+    </div>
+    <div>
+        <label for="course_duration">Course Duration</label>
+        <input type="text" name="course_duration" id="course_duration" placeholder="Course Duration">
+    </div>
+    <div>
+        <label for="course_category">Course Category</label>
+        <input type="text" name="course_category" id="course_category" placeholder="Category-Dev/Design/Business">
+    </div>
+    <div>
+        <label for="course_type">Course Type</label>
+        <input type="text" name="course_type" id="course_type" placeholder="Course Type Free/Paid">
+    </div>
+    <div>
+        <label for="course_author">Course Author</label>
+        <input type="text" name="course_author" id="course_author" placeholder="Course Author">
+    </div>
+    <div>
+        <label for="course_enrolled">Course Enrolled</label>
+        <input type="number" name="course_enrolled" id="course_enrolled" placeholder="Enrolled Students Count">
+    </div>
+    <div>
+        <label for="course_about">Course About</label>
+        <textarea cols="50" rows="7" name="course_about" id="course_about" placeholder="About the course..."></textarea>
+    </div>
+    <div>
+        <label for="course_for">Course For</label>
+        <textarea cols="50" rows="5" name="course_for" id="course_for" placeholder="For whom this course for..."></textarea>
+    </div>
+    <div>
+        <label for="course_skills">Course Skills</label>
+        <textarea cols="50" rows="5" name="course_skills" id="course_skills" placeholder="Skills splited by dot(.)!"></textarea>
+    </div>
+    <div>
+        <label for="course_requirements">Course Requirements</label>
+        <textarea cols="50" rows="5" name="course_requirements" id="course_requirements" placeholder="Requirements for the Course"></textarea>
+    </div>
+    <div>
+        <label for="course_certificate">Course Certification</label>
+        <input type="text" name="course_certificate" id="course_certificate" placeholder="Certification, Yes or No">
+    </div>
+    <div>
+        <label for="course_language">Course Language</label>
+        <input type="text" name="course_language" id="course_language" placeholder="Language">
+    </div>
+    <div>
+        <label for="course_level">Course Level</label>
+        <input type="text" name="course_level" id="course_level" placeholder="Level">
+    </div>
+    <div>
+        <label for="course_inner_title">Course Brief Title</label>
+        <textarea cols="50" rows="3" name="course_inner_title" id="course_inner_title" placeholder="Breif Title"></textarea>
+    </div>
+    <div>
+        <label for="course_rating">Course Rating</label>
+        <input type="number" name="course_rating" id="course_rating" placeholder="Rating">
+    </div>
+    <div>
+        <label for="course_contains">Course Lessons or Chapter Count</label>
+        <input type="number" name="course_contains" id="course_contains" placeholder="Rating">
+    </div>
+    <div>
+        <label for="course_tags">Course Tags</label>
+        <textarea cols="50" rows="3" name="course_tags" id="course_tags" placeholder="Add tags with space separation..."></textarea>
+    </div>
+    <div>
+        <label for="course_image">Course Main Image</label>
+        <input type="file" name="course_image" id="course_image">
+    </div>
+    <div>
+        <label for="course_about_image">Course About Image</label>
+        <input type="file" name="course_about_image" id="course_about_image">
+    </div>
+    <input type="submit" value="Add Course">
+</form>

@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProBuddy</title>
-    <link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/fancybox.css" />
-    <link rel="stylesheet" href="../static/css/style.min.css">
+    <link rel="stylesheet" href="{%  static 'css/swiper-bundle.min.css' %}"/>
+    <link rel="stylesheet" href="{%  static 'css/fancybox.css' %}"/>
+    <link rel="stylesheet" href="{%  static 'css/style.min.css' %}"/>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="header__inner">
                 <a class="header__logo logo" href="#">
-                    <img class="logo__img logo__rotate" src="{% static 'images/logo-img.svg' %}" alt="img">
+                    <img class="logo__img logo__rotate" src="{% static 'img/logo-img.svg' %}" alt="img">
                 </a>
                 <div class="header__wrapper">
                     <form class="header__search search" action="#">
@@ -39,7 +39,7 @@
                 </div>
                 <form class="header__form header-form" action="#">
                     <div class="header-form__img">
-                        <img class="header-form__img-image" src="{% static 'images/member-icon-3.png' %}" alt="img">
+                        <img class="header-form__img-image" src="{% static 'img/member-icon-3.png' %}" alt="img">
                     </div>
                     <div class="header-form__select custom-select">
                         <span style="color: white;" id="username">{{user.username}}</span>
@@ -349,7 +349,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                    <img class="card-box__poster-img" src="../static/images/new/event1.jpg" alt="img">
+                                    <img class="card-box__poster-img" src="{%  static 'img/new/event1.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         $25
                                     </p>
@@ -377,7 +377,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                   <img class="card-box__poster-img" src="../static/images/new/event2.jpg" alt="img">
+                                   <img class="card-box__poster-img" src="{%  static 'img/new/event2.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         Free
                                     </p>
@@ -405,7 +405,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                   <img class="card-box__poster-img" src="../static/images/new/event3.jpg" alt="img">
+                                   <img class="card-box__poster-img" src="{%  static 'img/new/event3.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         Free
                                     </p>
@@ -433,7 +433,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                   <img class="card-box__poster-img" src="../static/images/new/event4.jpg" alt="img">
+                                   <img class="card-box__poster-img" src="{%  static 'img/new/event4.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         $100
                                     </p>
@@ -461,7 +461,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                    <img class="card-box__poster-img" src="../static/images/new/event5.jpg" alt="img">
+                                    <img class="card-box__poster-img" src="{%  static 'img/new/event5.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         $70
                                     </p>
@@ -489,7 +489,7 @@
                                     </li>
                                 </ul>
                                 <a class="card-box__poster" href="event">
-                                    <img class="card-box__poster-img" src="../static/images/new/event6.jpg" alt="img">
+                                    <img class="card-box__poster-img" src="{%  static 'img/new/event6.jpg' %}" alt="img">
                                     <p class="card-box__poster-text">
                                         $10 – $40
                                     </p>
@@ -786,14 +786,14 @@
         </footer>
     </div>
 
-    <button class="switch-button"></button>
+    
 
 
-    <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/swiper-bundle.min.js"></script>
-    <script src="../static/js/fancybox.umd.js"></script>
-    <script src="../static/js/TweenMax.min.js"></script>
-    <script src="../static/js/main.min.js"></script>
+    <script src="{%  static 'js/jquery.min.js' %}"></script>
+    <script src="{%  static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{%  static 'js/fancybox.umd.js' %}"></script>
+    <script src="{%  static 'js/TweenMax.min.js' %}"></script>
+    <script src="{%  static 'js/main.min.js' %}"></script>
     
     
     

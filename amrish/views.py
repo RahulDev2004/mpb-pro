@@ -1,40 +1,18 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.contrib.auth.models import User
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+from app.views import db_user, db_courses, db_blogs
 # Create your views here.
 
-url = "mongodb://localhost:27017"
-client = MongoClient(url, server_api=ServerApi('1'))
+def is_amrish(user):
+    return user.groups.filter(name='amrish').exists()
 
-db = client.myprobuddy
-db_user = db.users
-db_courses = db.courses
+@user_passes_test(is_amrish)
+def home(request):
+    return render(request, 'amrish/home.html')
 
-
-def index(request):
-    return render(request, 'index.html')
-
-def amrish(request):
-    return render(request, 'home.html')
-
-def members(request):
-    return render(request, 'members.html')
-
-def members_page(request):
-    return render(request, 'members-page.html')
-
-def freelancers(request):
-    return render(request, 'freelancers.html')
-
-def groups(request):
-    return render(request, 'groups.html')
-
-def group_profile(request):
-    return render(request, 'group-profile.html')
-
+@user_passes_test(is_amrish)
 def courses(request):
     courses = {}
     for i in db_courses.find():
@@ -48,28 +26,101 @@ def courses(request):
             "course_image":i['course_image'],
             "course_duration":i['course_duration']
         }
-    return render(request, 'courses.html',{'courses':db_courses.find()})
+    return render(request, 'amrish/courses.html',{'courses':db_courses.find()})
 
-def create_courses(request):
-    return render(request, 'courses.html')
+@user_passes_test(is_amrish)
+def create_course(request):
+    if request.method == 'POST':
+        course_title  = request.POST["course_title"]
+        course_description  = request.POST["course_description"]
+        course_price  = request.POST["course_price"]
+        course_duration  = request.POST["course_duration"]
+        course_category  = request.POST["course_category"]
+        course_type  = request.POST["course_type"]
+        course_author  = request.POST["course_author"]
+        course_enrolled  = request.POST["course_enrolled"]
+        course_about  = request.POST["course_about"]
+        course_for  = request.POST["course_for"]
+        course_skills  = request.POST["course_skills"]
+        course_requirements  = request.POST["course_requirements"]
+        course_certificate  = request.POST["course_certificate"]
+        course_language  = request.POST["course_language"]
+        course_level  = request.POST["course_level"]
+        course_inner_title  = request.POST["course_inner_title"]
+        course_rating  = request.POST["course_rating"]
+        course_contains  = request.POST["course_contains"]
+        course_tags  = request.POST["course_tags"]
+        # course_image  = request.POST["course_image"]
+        # course_about_image = request.POST["course_about_image"]
+        
+        course_skills=course_skills.split("<li>")
+        for i in range(len(course_skills)):
+            course_skills[i]=course_skills[i].split("</li>")[0]
+            
+        course_requirements=course_requirements.split("<li>")
+        for i in range(len(course_requirements)):
+            course_requirements[i]=course_requirements[i].split("</li>")[0]
+            
+        db_courses.insert_one({
+            "oid": course_inner_title.replace(" ","-").lower()+"-"+course_duration.replace(" ","-").lower(),
+            "course_title": course_title,
+            "course_description": course_description,
+            "course_price": course_price,
+            "course_duration": course_duration,
+            "course_category": course_category,
+            "course_type": course_type,
+            "course_author": course_author,
+            "course_enrolled": course_enrolled,
+            "course_about": course_about,
+            "course_for": course_for,
+            "course_skills": course_skills,
+            "course_requirements": course_requirements,
+            "course_certificate": course_certificate,
+            "course_language": course_language,
+            "course_level": course_level,
+            "course_inner_title": course_inner_title,
+            "course_rating": course_rating,
+            "course_contains": course_contains,
+            "course_tags": course_tags,
+            "course_image": "url",
+            "course_about_image": "url"})
+        
+    return render(request, 'amrish/courses-create.html')
 
-def courses_page(request):
-    return render(request, 'courses-page.html')
+@user_passes_test(is_amrish)
+def courses_page(request,id):
+    context={'course':db_courses.find_one({"oid":id})}
+    return render(request,'amrish/courses-page.html',context)
 
-def shop(request):
-    return render(request, 'shop.html')
+@user_passes_test(is_amrish)
+def course_enrolled(request):
+    return render(request, 'amrish/courses-enrolled.html')
 
-def product(request):
-    return render(request, 'product.html')
+@user_passes_test(is_amrish)
+def blogs(request):
+    return render(request, 'amrish/blogs.html')
 
-def blog(request):
-    return render(request, 'blog.html')
+@user_passes_test(is_amrish)
+def blogs_page(request):
+    return render(request, 'amrish/blogs-page.html')
 
-def blog_page(request):
-    return render(request, 'blog-page.html')
+@user_passes_test(is_amrish)
+def blogs_create(request):
+    if request.method=="POST":
+        title = request.POST['title']
+        content = request.POST['content']
+        db_blogs.insert_one({"title":title,"content":content})
+        return redirect('blogs')
+    else:
+        return render(request, 'amrish/blogs-create.html')
 
+@user_passes_test(is_amrish)
 def events(request):
-    return render(request, 'events.html')
+    return render(request, 'amrish/events.html')
 
-def event(request):
-    return render(request, 'event.html')
+@user_passes_test(is_amrish)
+def events_page(request):
+    return render(request, 'amrish/events-page.html')
+
+def evens_registered(request):
+    return render(request, 'amrish/events-registered.html')

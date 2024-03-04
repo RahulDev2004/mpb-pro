@@ -5735,6 +5735,7 @@ textarea:focus{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: auto;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -15423,12 +15424,12 @@ padding-bottom: 10px;
 
 
 
-.body--white  .popup_menu {
+.body--white  .popup_menu:before {
    background: #222;
    color: #fff;
 }
 
-.body--white .popup_menu:before{
+.body--white .popup_menu{
    border-right-color: #222;
 }
 
@@ -15605,3 +15606,42 @@ padding-bottom: 10px;
    background: #856dae;
 }
 
+/* customs css */
+*:root{
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+.top-nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.top-nav ul{
+    display: flex;
+    list-style: none;
+}
+.top-nav ul li{
+    margin-left: 10px;
+}
+.top-nav ul li button{
+    padding: 10px 20px;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background-color: transparent;
+    border-radius: 5px;
+}
+.top-nav ul li button:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: 1s;
+}
+
+.title a button{
+    position: absolute;
+    color: var(--secondary-color);
+    border: 1px solid white;
+    font-size: 30px;
+    padding: 10px 20px;
+    right: 5%;
+}

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/fancybox.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}"/>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js' %}"></script>
 </head>
 
 <body style="overflow: hidden;">
@@ -68,17 +68,17 @@
                     {% csrf_token %}
                     <div class="login-form__box login-form-box">
                         <div class="login-form-box__row">
-                            <input id="username" name="username" class="login-form-box__row-input" type="text" placeholder="Username">
+                            <input id="username" name="su-username" class="login-form-box__row-input" type="text" placeholder="Username">
                         </div>
                     </div>
                     <div class="login-form__box login-form-box">
                         <div class="login-form-box__row">
-                            <input id="email" name="email" class="login-form-box__row-input" type="text" placeholder="Email">
+                            <input id="email" name="su-email" class="login-form-box__row-input" type="text" placeholder="Email">
                         </div>
                     </div>
                     <div class="login-form__box login-form-box">
                         <div class="login-form-box__row">
-                            <input id="password" name="password" class="login-form-box__row-input" type="password" placeholder="Password">
+                            <input id="password" name="su-password" class="login-form-box__row-input" type="password" placeholder="Password">
                         </div>
                     </div>
                     <div class="login-form__box login-form-box">
@@ -150,7 +150,7 @@
         </footer>
     </div>
 
-    <button class="switch-button"></button>
+    
 
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
