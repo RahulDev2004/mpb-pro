@@ -1,78 +1,100 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+
 # Create your views here.
 
-url = "mongodb://localhost:27017"
+url = "mongodb+srv://pro_user:rkwyrUiPnjjBsssg@cluster0.edxis.mongodb.net/?retryWrites=true&w=majority"
+
 client = MongoClient(url, server_api=ServerApi('1'))
 
-db = client.myprobuddy
-db_user = db.users
+db = client.mpb
+db_users = db.users
 db_courses = db.courses
+db_blogs = db.blogs
+
 
 
 def signup(request):
     if request.user.is_authenticated:
-        print("logedin")
-        return redirect('home')
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+
     elif request.method=="POST":
-        username = request.POST['username']
-        email = request.POST['email']
-        password = request.POST['password']
-        print(username,email,password)
-        if User.objects.filter(username=username).exists() and User.objects.filter(email=email).exists():messages.info(request, 'Username and Email already exists')
-        elif User.objects.filter(username=username).exists():messages.info(request, 'Username already exists')
+        username = request.POST['su-username']
+        email = request.POST['su-email']
+        password = request.POST['su-password']
+        if User.objects.filter(username=username).exists():messages.info(request, 'Username already exists')
         elif User.objects.filter(email=email).exists():messages.info(request, 'Email already exists')
         else:
             user = User.objects.create_user(username, email, password)
-            db_user.insert_one({"username":username,"email":email,"password":password})
+            user = db_users.insert_one({"username":username, "email":email, "role":"buddy", "password":password})
             user = authenticate(request, username=username, password=password)
+            group = Group.objects.all().filter(name="buddy").first()
+            user = User.objects.get(username=username)
+            user.groups.add(group)
             login(request, user)
-            return redirect("home")
+            return redirect("/buddy")
         return redirect("signup")
-    else:return render(request,'signup.html')
+    
+    return render(request,'signup.html')
+
+def ajaxsigningin(request):
+    print('ajaxsigningin')
 
 def signin(request):
-    if request.user.is_authenticated:return render(request,'index.html')
-    elif request.method == 'POST':    
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+
+
+    elif request.method == 'POST':
         username = request.POST["username"]
         password = request.POST["password"]
+        print(username,password)
         if '@' in username:username = User.objects.get(email=username.lower()).username
-        user = authenticate(request, username=username, password=password)
-        if user:login(request, user)
-        else:messages.info(request, 'User not found')
+        if User.objects.filter(username=username).exists():
+            user = authenticate(request, username=username, password=password)
+            if user:
+                print(username,"Signed In")
+                login(request, user)
+                if username=="amrish":return redirect("amrish-home")
+                return redirect("home")
+            else:
+                messages.info(request, 'Wrong Username or Email or Password')
+        else:
+            print("user not found")
+            messages.info(request, 'User not Found')
         return redirect("signin")
     else:return render(request,'signin.html')
 
 def signout(request):
     if request.user.is_authenticated:logout(request)
-    return redirect('signin')
+    return redirect('/home')
 
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+
+    else:return render(request,'home.html')
 
 def home(request):
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+
     return render(request, 'home.html')
 
-def members(request):
-    return render(request, 'members.html')
-
-def members_page(request):
-    return render(request, 'members-page.html')
-
-def freelancers(request):
-    return render(request, 'freelancers.html')
-
-def groups(request):
-    return render(request, 'groups.html')
-
-def group_profile(request):
-    return render(request, 'group-profile.html')
-
 def courses(request):
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+
     courses = {}
     for i in db_courses.find():
         courses[i['oid']] = {"course_category":i['course_category'],
@@ -87,26 +109,40 @@ def courses(request):
         }
     return render(request, 'courses.html',{'courses':db_courses.find()})
 
-def create_courses(request):
-    return render(request, 'courses.html')
+def course_page(request):
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
 
-def courses_page(request):
-    return render(request, 'courses-page.html')
+    context={'course':db_courses.find_one({"oid":"designing-a-low-prototype-in-figma-3-months"})}
+    return render(request,'courses-page.html',context)
 
-def shop(request):
-    return render(request, 'shop.html')
+def view_course(request,id):
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
 
-def product(request):
-    return render(request, 'product.html')
+    context={'course':db_courses.find_one({"oid":id})}
+    return render(request,'courses-page.html',context)
 
-def blog(request):
-    return render(request, 'blog.html')
+def blogs(request):
+    return render(request, 'blogs.html')
 
 def blog_page(request):
-    return render(request, 'blog-page.html')
+    # blog={'blog':db_courses.find_one({"oid":id})}
+    return render(request, 'blogs-page.html')
+
+def blogs_create(request):
+    if request.method=="POST":
+        title = request.POST['title']
+        content = request.POST['content']
+        db_blogs.insert_one({"title":title,"content":content})
+        return redirect('blogs')
+    else:
+        return render(request, 'amrish/blogs-create.html')
 
 def events(request):
     return render(request, 'events.html')
 
-def event(request):
+def event_page(request):
     return render(request, 'event.html')

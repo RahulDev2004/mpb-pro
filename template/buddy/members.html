@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProBuddy</title>
-    <link rel="stylesheet" href="../static/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/fancybox.css" />
-    <link rel="stylesheet" href="../static/css/style.min.css">
+    <link rel="stylesheet" href="{%  static 'css/swiper-bundle.min.css' %}"/>
+    <link rel="stylesheet" href="{%  static 'css/fancybox.css' %}"/>
+    <link rel="stylesheet" href="{%  static 'css/style.min.css' %}"/>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="header__inner">
                 <a class="header__logo logo" href="#">
-                    <img class="logo__img logo__rotate" src="{% static 'images/logo-img.svg' %}" alt="img">
+                    <img class="logo__img logo__rotate" src="{% static 'img/logo-img.svg' %}" alt="img">
                 </a>
                 <div class="header__wrapper">
                     <form class="header__search search" action="#">
@@ -39,7 +39,7 @@
                 </div>
                 <form class="header__form header-form" action="#">
                     <div class="header-form__img">
-                        <img class="header-form__img-image" src="{% static 'images/member-icon-3.png' %}" alt="img">
+                        <img class="header-form__img-image" src="{% static 'img/member-icon-3.png' %}" alt="img">
                     </div>
                     <div class="header-form__select custom-select">
                         <span style="color: white;" id="username">{{user.username}}</span>
@@ -77,7 +77,7 @@
                         </defs>
                     </svg>
                 </div>
-              <nav class="aside__menu menu">
+               <nav class="aside__menu menu">
                     <ul class="menu__list">
                         <li class="menu__list-item">
                             <a class="menu__list-link menu__list-link--active" href="home"s>
@@ -269,42 +269,24 @@
                     </ul>
                 </nav>
                 
-            </aside> 
-            <section class="main__freelancers freelancers">
+            </aside>
+            <section class="main__members members">
                 <div class="container">
-                    <h1 class="freelancers__title title">
-                        Freelancers
+                    <h1 class="members__title title">
+                        Members
                     </h1>
-                    <div class="freelancers__filters-panel filters-panel">
+                    <div class="members__filters-panel filters-panel">
                         <div class="filters-panel__tags tags">
                             <a class="tags__tag tags__tag--active" href="#">
-                                All
+                                All Members
                                 <span>
                                     23
                                 </span>
                             </a>
                             <a class="tags__tag tags__tag" href="#">
-                                UX/UI Designers
+                                Following
                                 <span>
                                     10
-                                </span>
-                            </a>
-                            <a class="tags__tag tags__tag" href="#">
-                                Illustrators
-                                <span>
-                                    5
-                                </span>
-                            </a>
-                            <a class="tags__tag tags__tag" href="#">
-                                3D Artists
-                                <span>
-                                    6
-                                </span>
-                            </a>
-                            <a class="tags__tag tags__tag" href="#">
-                                Graphic Designers
-                                <span>
-                                    2
                                 </span>
                             </a>
                         </div>
@@ -332,11 +314,11 @@
                             </div>
                         </form>
                     </div>
-                    <div class="freelancers__inner">
-                        <div class="freelancers__card card freelancers--card">
+                    <div class="members__inner">
+                        <div class="members__card card">
                             <div class="card__inner">
                                 <p class="card__suptext">
-                                    illustrator
+                                    3d artist
                                 </p>
                                 <div class="card__options card-options">
                                     <div class="card-options__btn">
@@ -366,6 +348,77 @@
                                             </span>
                                         </a>
                                         <a class="card-options__link" href="#">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Follow
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="card__title">
+                                    Anthony
+                                    <span>
+                                        Clark
+                                    </span>
+                                </h3>
+                                <a class="card__text" href="members-page">
+                                    @anthony-clark
+                                </a>
+                                <p class="card__subtext">
+                                    Joined April 2019
+                                </p>
+                                <div class="card__box card-box">
+                                    <div class="card-box__person-img card-person-img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-2.png' %}" alt="img">
+                                        <span class="card-person-img__status">
+
+                                        </span>
+                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members__card card">
+                            <div class="card__inner">
+                                <p class="card__suptext">
+                                    ux/ui designer
+                                </p>
+                                <div class="card__options card-options">
+                                    <div class="card-options__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="card-options__inner">
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Add Friend
+                                            </span>
+                                        </a>
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -385,480 +438,26 @@
                                         Ferguson
                                     </span>
                                 </h3>
-                                <a class="card__text" href="#">
+                                <a class="card__text" href="members-page">
                                     @valerie_ui
                                 </a>
                                 <p class="card__subtext">
-                                    Vancouver, British Columbia, Canada
+                                    Joined Oct 2020
                                 </p>
                                 <div class="card__box card-box">
                                     <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-24.png"
-                                            alt="img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-3.png' %}" alt="img">
                                         <span class="card-person-img__status card-person-img__status--disabled">
 
                                         </span>
                                     </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $30
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.7
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                26 reviews
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
                                 </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
                             </div>
                         </div>
-                        <div class="freelancers__card card freelancers--card">
-                            <div class="card__inner">
-                                <p class="card__suptext">
-                                    web designer
-                                </p>
-                                <div class="card__options card-options">
-                                    <div class="card-options__btn">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path
-                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Add Friend
-                                            </span>
-                                        </a>
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Follow
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h3 class="card__title">
-                                    Jermaine
-                                    <span>
-                                        Mooney
-                                    </span>
-                                </h3>
-                                <a class="card__text" href="#">
-                                    @jermaine-mooney-des
-                                </a>
-                                <p class="card__subtext">
-                                    Vienna, Austria
-                                </p>
-                                <div class="card__box card-box">
-                                    <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-22.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
-
-                                        </span>
-                                    </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $65 - $75
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.2
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                83 reviews
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
-                            </div>
-                        </div>
-                        <div class="freelancers__card card freelancers--card">
-                            <div class="card__inner">
-                                <p class="card__suptext">
-                                    3d artist
-                                </p>
-                                <div class="card__options card-options">
-                                    <div class="card-options__btn">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path
-                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Add Friend
-                                            </span>
-                                        </a>
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Follow
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h3 class="card__title">
-                                    Elodie
-                                    <span>
-                                        Hardin
-                                    </span>
-                                </h3>
-                                <a class="card__text" href="#">
-                                    @elhardin.3dart
-                                </a>
-                                <p class="card__subtext">
-                                    Rotterdam, Netherlands
-                                </p>
-                                <div class="card__box card-box">
-                                    <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-4.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
-
-                                        </span>
-                                    </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $40
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    5.0
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                19 reviews
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
-                            </div>
-                        </div>
-                        <div class="freelancers__card card freelancers--card">
-                            <div class="card__inner">
-                                <p class="card__suptext">
-                                    graphic designer
-                                </p>
-                                <div class="card__options card-options">
-                                    <div class="card-options__btn">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path
-                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Add Friend
-                                            </span>
-                                        </a>
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Follow
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h3 class="card__title">
-                                    Armaan
-                                    <span>
-                                        Humphrey
-                                    </span>
-                                </h3>
-                                <a class="card__text" href="#">
-                                    @humphrey83
-                                </a>
-                                <p class="card__subtext">
-                                    London, United Kingdom
-                                </p>
-                                <div class="card__box card-box">
-                                    <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-7.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
-
-                                        </span>
-                                    </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $20 - $35
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.5
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                2 reviews
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
-                            </div>
-                        </div>
-                        <div class="freelancers__card card freelancers--card">
-                            <div class="card__inner">
-                                <p class="card__suptext">
-                                    ux/ui designer
-                                </p>
-                                <div class="card__options card-options">
-                                    <div class="card-options__btn">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path
-                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Add Friend
-                                            </span>
-                                        </a>
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Follow
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h3 class="card__title">
-                                    Homer
-                                    <span>
-                                        Heath
-                                    </span>
-                                </h3>
-                                <a class="card__text" href="#">
-                                    @hheath-ux
-                                </a>
-                                <p class="card__subtext">
-                                    Helsinki, Finland
-                                </p>
-                                <div class="card__box card-box">
-                                    <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-28.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
-
-                                        </span>
-                                    </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $40 - $50
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.6
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                5 reviews
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
-                            </div>
-                        </div>
-                        <div class="freelancers__card card freelancers--card">
+                        <div class="members__card card">
                             <div class="card__inner">
                                 <p class="card__suptext">
                                     illustrator
@@ -870,7 +469,7 @@
                                         <span></span>
                                     </div>
                                     <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -890,7 +489,7 @@
                                                 Add Friend
                                             </span>
                                         </a>
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -905,170 +504,31 @@
                                     </div>
                                 </div>
                                 <h3 class="card__title">
-                                    Jing
+                                    Lilly-Rose
                                     <span>
-                                        Zhang
+                                        Holland
                                     </span>
                                 </h3>
-                                <a class="card__text" href="#">
-                                    @mazakii_aquarelle
+                                <a class="card__text" href="members-page">
+                                    @lillyrose.flower
                                 </a>
                                 <p class="card__subtext">
-                                    Barcelona, Spain
+                                    Joined Jan 2015
                                 </p>
                                 <div class="card__box card-box">
                                     <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-21.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-7.png' %}" alt="img">
+                                        <span class="card-person-img__status">
 
                                         </span>
                                     </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $38
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.1
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                20 reviews
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
                                 </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
                             </div>
                         </div>
-                        <div class="freelancers__card card freelancers--card">
-                            <div class="card__inner">
-                                <p class="card__suptext">
-                                    ux/ui designer
-                                </p>
-                                <div class="card__options card-options">
-                                    <div class="card-options__btn">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path
-                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Add Friend
-                                            </span>
-                                        </a>
-                                        <a class="card-options__link" href="#">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
-                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            <span>
-                                                Follow
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h3 class="card__title">
-                                    Floyd
-                                    <span>
-                                        Frederick
-                                    </span>
-                                </h3>
-                                <a class="card__text" href="#">
-                                    @ff_ux
-                                </a>
-                                <p class="card__subtext">
-                                    San Ġiljan (St Julian's), Malta
-                                </p>
-                                <div class="card__box card-box">
-                                    <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-24.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
-
-                                        </span>
-                                    </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $59
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.4
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                48 reviews
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
-                            </div>
-                        </div>
-                        <div class="freelancers__card card freelancers--card">
+                        <div class="members__card card">
                             <div class="card__inner">
                                 <p class="card__suptext">
                                     graphic designer
@@ -1080,7 +540,7 @@
                                         <span></span>
                                     </div>
                                     <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -1100,7 +560,78 @@
                                                 Add Friend
                                             </span>
                                         </a>
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-pages">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Follow
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="card__title">
+                                    Tina
+                                    <span>
+                                        Alvarez
+                                    </span>
+                                </h3>
+                                <a class="card__text" href="members-page">
+                                    @tina.alvarez
+                                </a>
+                                <p class="card__subtext">
+                                    Joined Aug 2021
+                                </p>
+                                <div class="card__box card-box">
+                                    <div class="card-box__person-img card-person-img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-8.png' %}" alt="img">
+                                        <span class="card-person-img__status">
+
+                                        </span>
+                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members__card card">
+                            <div class="card__inner">
+                                <p class="card__suptext">
+                                    ux/ui designer
+                                </p>
+                                <div class="card__options card-options">
+                                    <div class="card-options__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="card-options__inner">
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Add Friend
+                                            </span>
+                                        </a>
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -1117,63 +648,29 @@
                                 <h3 class="card__title">
                                     Susan
                                     <span>
-                                        Jordan
+                                        Fole
                                     </span>
                                 </h3>
-                                <a class="card__text" href="#">
-                                    @susy.jordan_dsgn
+                                <a class="card__text" href="members-page">
+                                    @susan-foley
                                 </a>
                                 <p class="card__subtext">
-                                    Oslo, Norway
+                                    Joined Feb 2021
                                 </p>
                                 <div class="card__box card-box">
                                     <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-23.png"
-                                            alt="img">
-                                        <span class="card-person-img__status card-person-img__status--disabled">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-4.png' %}" alt="img">
+                                        <span class="card-person-img__status">
 
                                         </span>
                                     </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $10 - $20
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    5.0
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                37 reviews
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
                                 </div>
-                                <a class="card__link" href="#">
-                                    Invite
-                                </a>
                             </div>
                         </div>
-                        <div class="freelancers__card card freelancers--card">
+                        <div class="members__card card">
                             <div class="card__inner">
                                 <p class="card__suptext">
                                     3d artist
@@ -1185,7 +682,7 @@
                                         <span></span>
                                     </div>
                                     <div class="card-options__inner">
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -1205,7 +702,7 @@
                                                 Add Friend
                                             </span>
                                         </a>
-                                        <a class="card-options__link" href="#">
+                                        <a class="card-options__link" href="members-page">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -1220,66 +717,245 @@
                                     </div>
                                 </div>
                                 <h3 class="card__title">
-                                    Francesca
+                                    Timothy
                                     <span>
-                                        Curtis
+                                        Stuart
                                     </span>
                                 </h3>
-                                <a class="card__text" href="#">
-                                    @francurtis_3dartist
+                                <a class="card__text" href="members-page">
+                                    @tim.stuart.3d
                                 </a>
                                 <p class="card__subtext">
-                                    Paris, France
+                                    Joined Dec 2022
                                 </p>
                                 <div class="card__box card-box">
                                     <div class="card-box__person-img card-person-img">
-                                        <img class="card-person-img__image" src="../static/images/member-icon-1.png"
-                                            alt="img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-10.png' %}" alt="img">
+                                        <span class="card-person-img__status">
+
+                                        </span>
+                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members__card card">
+                            <div class="card__inner">
+                                <p class="card__suptext">
+                                    ux/ui designer
+                                </p>
+                                <div class="card__options card-options">
+                                    <div class="card-options__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="card-options__inner">
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Add Friend
+                                            </span>
+                                        </a>
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Follow
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="card__title">
+                                    Philippa
+                                    <span>
+                                        Bush
+                                    </span>
+                                </h3>
+                                <a class="card__text" href="members-page">
+                                    @philippa-bush23
+                                </a>
+                                <p class="card__subtext">
+                                    Joined May 2023
+                                </p>
+                                <div class="card__box card-box">
+                                    <div class="card-box__person-img card-person-img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-9.png' %}" alt="img">
                                         <span class="card-person-img__status card-person-img__status--disabled">
 
                                         </span>
                                     </div>
-                                    <div class="card-box__inner">
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                $100
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                per hour
-                                            </p>
-                                        </div>
-                                        <div class="card-box__column card-box-column">
-                                            <p class="card-box-column__text">
-                                                <span>
-                                                    4.5
-                                                </span>
-                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons" clip-path="url(#clip0_114_9488)">
-                                                        <path id="Vector"
-                                                            d="M11.9687 4.60317C11.8902 4.36018 11.6746 4.1876 11.4197 4.16462L7.95614 3.85013L6.58656 0.644511C6.48558 0.40958 6.25559 0.257507 6.00006 0.257507C5.74453 0.257507 5.51454 0.40958 5.41356 0.64506L4.04399 3.85013L0.579908 4.16462C0.325385 4.18815 0.110414 4.36018 0.0314019 4.60317C-0.0476102 4.84616 0.0253592 5.11267 0.2179 5.28068L2.83592 7.5767L2.06392 10.9773C2.00744 11.2274 2.10448 11.4858 2.31195 11.6358C2.42346 11.7164 2.55393 11.7574 2.68549 11.7574C2.79893 11.7574 2.91145 11.7268 3.01244 11.6664L6.00006 9.88077L8.98659 11.6664C9.20513 11.7978 9.48062 11.7858 9.68762 11.6358C9.89518 11.4854 9.99214 11.2268 9.93565 10.9773L9.16366 7.5767L11.7817 5.28113C11.9742 5.11267 12.0477 4.84661 11.9687 4.60317Z"
-                                                            fill="#F9D442" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_114_9488">
-                                                            <rect width="12" height="12" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </p>
-                                            <p class="card-box-column__subtext">
-                                                6 reviews
-                                            </p>
-                                        </div>
+                                    <a class="card-box__link" href="members-pages">
+                                        Send Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members__card card">
+                            <div class="card__inner">
+                                <p class="card__suptext">
+                                    illustrator
+                                </p>
+                                <div class="card__options card-options">
+                                    <div class="card-options__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="card-options__inner">
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Add Friend
+                                            </span>
+                                        </a>
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Follow
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a class="card__link" href="#">
-                                    Invite
+                                <h3 class="card__title">
+                                    Katie
+                                    <span>
+                                        Campbell
+                                    </span>
+                                </h3>
+                                <a class="card__text" href="members-page">
+                                    @katie.campbell.art
                                 </a>
+                                <p class="card__subtext">
+                                    Joined Apr 2018
+                                </p>
+                                <div class="card__box card-box">
+                                    <div class="card-box__person-img card-person-img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-28.png' %}" alt="img">
+                                        <span class="card-person-img__status card-person-img__status--disabled">
+
+                                        </span>
+                                    </div>
+                                    <a class="card-box__link" href="members-pages">
+                                        Send Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="members__card card">
+                            <div class="card__inner">
+                                <p class="card__suptext">
+                                    graphic designer
+                                </p>
+                                <div class="card__options card-options">
+                                    <div class="card-options__btn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="card-options__inner">
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.6667 14V12.6667C10.6667 11.9594 10.3857 11.2811 9.88563 10.781C9.38553 10.281 8.70725 10 8.00001 10H4.00001C3.29277 10 2.61449 10.281 2.11439 10.781C1.6143 11.2811 1.33334 11.9594 1.33334 12.6667V14"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M6.00001 7.33333C7.47277 7.33333 8.66668 6.13943 8.66668 4.66667C8.66668 3.19391 7.47277 2 6.00001 2C4.52725 2 3.33334 3.19391 3.33334 4.66667C3.33334 6.13943 4.52725 7.33333 6.00001 7.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12.6667 5.33331V9.33331" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M14.6667 7.33331H10.6667" stroke="#0E1218" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Add Friend
+                                            </span>
+                                        </a>
+                                        <a class="card-options__link" href="members-page">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.6667 9.33333C13.66 8.36 14.6667 7.19333 14.6667 5.66667C14.6667 4.69421 14.2804 3.76158 13.5927 3.07394C12.9051 2.38631 11.9725 2 11 2C9.82668 2 9.00001 2.33333 8.00001 3.33333C7.00001 2.33333 6.17334 2 5.00001 2C4.02755 2 3.09492 2.38631 2.40729 3.07394C1.71965 3.76158 1.33334 4.69421 1.33334 5.66667C1.33334 7.2 2.33334 8.36667 3.33334 9.33333L8.00001 14L12.6667 9.33333Z"
+                                                    stroke="#0E1218" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span>
+                                                Follow
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h3 class="card__title">
+                                    Leila
+                                    <span>
+                                        Calderon
+                                    </span>
+                                </h3>
+                                <a class="card__text" href="members-page">
+                                    @lcalderon.paralect
+                                </a>
+                                <p class="card__subtext">
+                                    Joined Jul 2020
+                                </p>
+                                <div class="card__box card-box">
+                                    <div class="card-box__person-img card-person-img">
+                                        <img class="card-person-img__image" src="{%  static 'img/member-icon-19.png' %}" alt="img">
+                                        <span class="card-person-img__status">
+
+                                        </span>
+                                    </div>
+                                    <a class="card-box__link" href="members-page">
+                                        Send Message
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="freelancers__paging paging">
+                    <div class="members__paging paging">
                         <p class="paging__text">
                             Viewing 1 - 9 of 30 active members
                         </p>
@@ -1315,7 +991,7 @@
             </section>
         </main>
         
-            <section class="main__login login" id="login-popup">
+                    <section class="main__login login" id="login-popup">
                 <div class="login__inner">
                     <h2 class="login__title">
                         Log In
@@ -1599,15 +1275,14 @@
             </div>
         </footer>
     </div>
+    
+   
 
-    <button class="switch-button"></button>
-
-
-    <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/swiper-bundle.min.js"></script>
-    <script src="../static/js/fancybox.umd.js"></script>
-    <script src="../static/js/TweenMax.min.js"></script>
-    <script src="../static/js/main.min.js"></script>
+    <script src="{%  static 'js/jquery.min.js' %}"></script>
+    <script src="{%  static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{%  static 'js/fancybox.umd.js' %}"></script>
+    <script src="{%  static 'js/TweenMax.min.js' %}"></script>
+    <script src="{%  static 'js/main.min.js' %}"></script>
     
     
     
