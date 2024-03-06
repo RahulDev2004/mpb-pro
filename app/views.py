@@ -93,7 +93,7 @@ def home(request):
         for i in db_courses.find():
             if t<i["last_update"]:
                 t=i["last_update"]
-                last_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"]}
+                last_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"],"oid":i["oid"]}
         return last_course
     
     def get_popular_course():
@@ -102,7 +102,7 @@ def home(request):
         for i in db_courses.find():
             if t<int(i["course_enrolled"]):
                 t=int(i["course_enrolled"])
-                popular_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"]}
+                popular_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"],"oid":i["oid"]}
         return popular_course
     
     popular_course = get_popular_course()
