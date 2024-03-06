@@ -33,7 +33,6 @@ def home(request):
     
     popular_course = get_popular_course()
     last_course = get_last_course()
-    print(popular_course,"\n\n",last_course)
     return render(request, 'amrish/home.html',{"last_course":last_course,"popular_course":popular_course})
 
 @user_passes_test(is_amrish)
