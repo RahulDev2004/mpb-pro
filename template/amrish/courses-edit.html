@@ -30,14 +30,14 @@
                 <!-- <p class="section-top-content__suptext">
                     UX/UI
                 </p> -->
-                <input type="text" name="course_category" id="course_category" placeholder="Course Category example: UI/UX">
+                <input type="text" name="course_category" id="course_category" value="{{course.course_category}}">
                 <br>
-                <textarea name="course_inner_title" id="course_inner_title" cols="30" rows="6" style="font-size: 70px;" placeholder="Title"></textarea><br>
+                <textarea name="course_inner_title" id="course_inner_title" cols="30" rows="3" style="font-size: 50px;line-height:normal;">{{course.course_inner_title}}</textarea><br>
                 <ul class="section-top-content__list card-list">
                     <li class="card-list__item">
                         <p class="card-list__rait">
                             <span>
-                                <input type="text" style="width: 50px;" name="course_rating" id="course_rating">
+                                <input type="text" style="width: 50px;" name="course_rating" id="course_rating" value="{{course.course_rating}}">
                             </span>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -56,19 +56,17 @@
                     </li>
                     <li class="card-list__item">
                         <p class="card-list__text">
-                            <input type="text" style="width: 50px;" name="course_contains" id="course_contains"> Lessons
+                            <input type="text" style="width: 50px;" name="course_contains" id="course_contains" value="{{course.course_rating}}"> Lessons
                         </p>
                     </li>
                     <li class="card-list__item">
                         <p class="card-list__text">
-                            <input type="text" style="width: 50px;" name="course_enrolled" id="course_enrolled">
-                            Students
+                            <input type="text" style="width: 50px;" name="course_enrolled" id="course_enrolled" value="{{course.course_enrolled}}"> Students
                         </p>
                     </li>
                     <li class="card-list__item">
                         <a class="card-list__link" href="#">
-                            by 
-                            <input type="text" style="width: 100px;" name="course_author" id="course_author" placeholder="Author">
+                            by <input type="text" style="width: 100px;" name="course_author" id="course_author" placeholder="Author" value="{{course.course_author}}">
                             <!-- <img class="card-list__link-img" src="{% static 'img/member-icon-16.png' %}" alt="img"> -->
                         </a>
                     </li>
@@ -111,7 +109,7 @@
                         <h2 class="courses-section-overview-box__title">
                             About This Course
                         </h2>
-                        <textarea type="text" name="course_about" id="course_about" placeholder="Write about this course..." /></textarea>
+                        <textarea type="text" name="course_about" id="course_about" value="{{course.course_about}}"></textarea>
                         <div class="courses-section-overview-box__img">
                             <img class="courses-section-overview-box__img-image"
                                 src="{% static 'img/new/course-img-7.jpg' %}" alt="img">

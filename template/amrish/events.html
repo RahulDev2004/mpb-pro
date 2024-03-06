@@ -4,11 +4,16 @@
 {% block main %}
 <section class="main__courses events">
     <div class="container">
-        <h1 class="title">
-            Upcoming<br/>Events
-            <a href="{% url 'events-registered' %}"><button>Registered</button></a>
-        </h1>
+        <nav class="top-nav">
+            <ul>
+                <a href="{% url 'amrish-create-event' %}"><li><button>Create Event</button></li></a>
+                <a href="{% url 'amrish-event-registered' %}"><li><button>Registered</button></li></a>
+            </ul>
+        </nav>
         <div class="groups-section__swiper groups-section-swiper swiper">
+            <h1 class="courses__title title">
+                Upcoming Events
+            </h1>
             <div class="swiper-wrapper">
                 <div class="groups-section-swiper__slide groups-section-slide swiper-slide">
                     <div class="groups-section__card card">

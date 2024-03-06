@@ -1015,7 +1015,7 @@ body {
 
 
 
-.body--white input[type="text"],.body--white  input[type="email"],.body--white  input[type="tel"] ,.body--white  textarea ,
+.body--white input[type="text"],.body--white input[type="number"],.body--white  input[type="email"],.body--white  input[type="tel"] ,.body--white  textarea ,
 .body--white  input[type="password"]
 {
    border-color: #d7dadd ;
@@ -1023,6 +1023,7 @@ body {
 
 
 .body--white input[type="text"]:focus,
+.body--white input[type="number"]:focus,
 .body--white  input[type="email"]:focus,
 .body--white  input[type="tel"]:focus ,
 .body--white  textarea:focus ,
@@ -1031,7 +1032,7 @@ body {
    border-color: #222 ;
 }
 
-input[type="text"],input[type="mail"],input[type="tel"]  , input[type="password"] {
+input[type="text"],input[type="number"],input[type="mail"],input[type="tel"]  , input[type="password"] {
    padding-top: 13px;
    padding-right: 24px;
    padding-bottom: 13px;
@@ -1050,7 +1051,7 @@ input[type="text"],input[type="mail"],input[type="tel"]  , input[type="password"
 }
 
 
-input[type="text"]:focus,input[type="text"]:focus,input[type="mail"]:focus,input[type="tel"]:focus{
+input[type="text"],input[type="number"],input[type="text"]:focus,input[type="number"]:focus,input[type="mail"]:focus,input[type="tel"]:focus{
    border-color: #fff;
 }
 

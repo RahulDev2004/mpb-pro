@@ -66,18 +66,7 @@
                     <p class="card__suptext card__suptext--pink">
                         {{course.course_category}}
                     </p>
-                    <a href="{% url 'view-course' course.oid %}"><button class="course-edit-btn">Edit</button></a>
-                    <style>
-                        .course-edit-btn{
-                            position: absolute;
-                            right: 0;
-                            color: var(--secondary-color);
-                            border: 1px solid var(--secondary-color);
-                            padding: 5px 10px;
-                            border-radius: 5px;
-                        }
-                    </style>
-                    <a class="card__title" href="{% url 'view-course' course.oid %}">
+                    <a class="card__title" href="{% url 'amrish-view-course' course.oid %}">
                         {{course.course_title}}
                     </a>
                     <ul class="card__list card-list">

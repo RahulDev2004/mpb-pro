@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from django.contrib.auth.decorators import user_passes_test
-from app.views import db_user, db_courses, db_blogs
+from app.views import db_users, db_courses, db_blogs
 
 def is_buddy(user):
-    return user.groups.filter(name='buddy').exists() 
+    return user.groups.filter(name='buddy').exists()
 
 @user_passes_test(is_buddy)
 def home(request):
@@ -37,9 +37,12 @@ def view_course(request,id):
 
 @user_passes_test(is_buddy)
 def register_course(request,id):
-    print(id)
-    db_user.find_one_and_update({"username":request.user.username},{"$push":{"courses":id}})
-    context={'course':db_courses.find_one({"oid":id})}
+    user_course=db_users.find_one({"username":request.user.username})['courses']
+    if id in user_course:
+        print("Already Enrolled")
+    else:
+        db_users.find_one_and_update({"username":request.user.username},{"$push":{"courses":id}})
+        context={'course':db_courses.find_one({"oid":id})}
     return render(request,'buddy/courses-page.html',context)
 
 @user_passes_test(is_buddy)
