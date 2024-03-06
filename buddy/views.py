@@ -12,7 +12,30 @@ def is_buddy(user):
 
 @user_passes_test(is_buddy)
 def home(request):
-    return render(request, 'buddy/home.html')
+    if request.user.is_authenticated:
+        if request.user.groups.filter(name='amrish').exists():return redirect ("amrish-home")
+        elif request.user.groups.filter(name='buddy').exists():return redirect ("buddy-home")
+    def get_last_course():
+        last_course={}
+        t=0
+        for i in db_courses.find():
+            if t<i["last_update"]:
+                t=i["last_update"]
+                last_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"]}
+        return last_course
+    
+    def get_popular_course():
+        popular_course={}
+        t=0
+        for i in db_courses.find():
+            if t<int(i["course_enrolled"]):
+                t=int(i["course_enrolled"])
+                popular_course={"course_title":i["course_title"],"course_image":i["course_image"],"course_rating":i["course_rating"],"course_category":i["course_category"],"course_contains":i["course_contains"],"course_enrolled":i["course_enrolled"],"course_author":i["course_author"],"course_price":i["course_price"]}
+        return popular_course
+    
+    popular_course = get_popular_course()
+    last_course = get_last_course()
+    return render(request, 'buddy/home.html',{"last_course":last_course,"popular_course":popular_course})
 
 @user_passes_test(is_buddy)
 def courses(request):
