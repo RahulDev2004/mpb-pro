@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'amrish/index.html' %}
 {% load static %}
 {% block title %}MyProBuddy | Event Page{% endblock %}
 {% block main %}
@@ -28,11 +28,10 @@
             <div class="section-top__inner">
                 <div class="section-top__content section-top-content">
                     <p class="section-top-content__date">
-                        Feb 27 – Mar 2, 2023
+                        {{event.event_title_date}}
                     </p>
                     <h1 class="section-top-content__title title">
-                        Big Global <br>
-                        E-Commerce Conference ‘23
+                        {{event.event_title}}
                     </h1>
                     <ul class="section-top-content__list card-list">
                         <li class="card-list__item">

@@ -24,8 +24,9 @@ urlpatterns = [
     path('blogs-create', views.blogs_create, name='blogs-create'),
 
     path('events', views.events, name='amrish-events'),
-    path('events-page', views.events_page, name='amrish-events-page'),
+    path('view-event/<str:id>/', views.events_page, name='amrish-view-event'),
     path('create-events', views.create_event, name='amrish-create-event'),
+    path('add_event', views.add_event),
     path('events-registered', views.evens_registered, name='amrish-event-registered'),
 ]
 

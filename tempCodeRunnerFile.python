@@ -1,0 +1,4 @@
+
+import datetime
+lu=str(datetime.datetime.now()).replace(":","").replace(".","").replace("-","").replace(" ","")
+print(lu)

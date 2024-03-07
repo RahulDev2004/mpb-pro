@@ -1,16 +1,67 @@
-# from pymongo.mongo_client import MongoClient
-# from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
-# url = "mongodb+srv://pro_user:rkwyrUiPnjjBsssg@cluster0.edxis.mongodb.net/?retryWrites=true&w=majority"
+url = "mongodb+srv://pro_user:rkwyrUiPnjjBsssg@cluster0.edxis.mongodb.net/?retryWrites=true&w=majority"
 
-# client = MongoClient(url, server_api=ServerApi('1'))
+client = MongoClient(url, server_api=ServerApi('1'))
 
-# db = client.mpb
-# db_user = db.users
-# db_courses = db.courses
-import datetime
-lu=str(datetime.datetime.now()).replace(":","").replace(".","").replace("-","").replace(" ","")
-print(lu)
+db = client.mpb
+db_user = db.users
+db_courses = db.courses
+db_events = db.events
+
+db_events.delete_many(filter={})
+
+# import datetime
+
+# def convert_event_datetime(date_string, time_string):
+#     def format_date(date_string):
+#         mon=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
+#         date=str(date_string).replace(" – "," ").replace(",","").lower().split(" ")
+#         if date[2] not in mon:
+#             date[0]=mon.index(date[0])+1
+#             date[3]=mon.index(date[3])+1
+#         elif date[0] in mon and date[2] in mon:
+#             date[0]=mon.index(date[0])+1
+#             date[2]=mon.index(date[2])+1    
+#         start_date = int(str(date[-1])+str(date[0])+str(date[1]))
+#         end_date = int(str(date[-1])+str(date[2])+str(date[3]))
+#         return start_date, end_date
+    
+#     def format_time(time_string):
+#         time_string=str(time_string)
+#         time_string=time_string.split(" - ")
+#         time_string[0]=time_string[0].split(" ")
+#         if time_string[0][1]=="pm":
+#             time_string[0][0]=str(int(time_string[0][0].split(":")[0])+12)+time_string[0][0].split(":")[1]
+#         else:
+#             time_string[0][0]=time_string[0][0].split(":")[0]+time_string[0][0].split(":")[1]
+#         time_string[1]=time_string[1].split(" ")
+#         if time_string[1][1]=="pm":
+#             time_string[1][0]=str(int(time_string[1][0].split(":")[0])+12)+time_string[1][0].split(":")[1]
+#         else:
+#             time_string[1][0]=time_string[1][0].split(":")[1]+time_string[1][0].split(":")[1]
+        
+#         if len(time_string[0][0])==3:
+#             time_string[0][0]="0"+time_string[0][0]
+        
+#         start_time=time_string[0][0]
+#         end_time=time_string[1][0]
+
+#         return start_time, end_time    
+    
+#     start_time,end_time=format_time(time_string)
+#     start_date,end_date=format_date(date_string)
+    
+#     start = int(str(start_date)+str(start_time))
+#     end = int(str(end_date)+str(end_time))
+    
+#     return start, end
+    
+# print(convert_event_datetime(date_string="Feb 27 – Mar 2, 2023",time_string="9:30 am - 6:00 pm"))
+
+# lu=str(datetime.datetime.now()).replace(":","").replace(".","").replace("-","").replace(" ","")
+# print(lu)
 
 # db_courses.insert_one(
 #     {

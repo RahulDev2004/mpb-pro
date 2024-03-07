@@ -20,5 +20,8 @@ urlpatterns = [
 
     path('events', views.events, name='events'),
     path('events-page', views.event_page, name='events-page'),
+    
+    path('trial', views.trial, name='trial'),
+    path('c_data', views.c_data, name='c_data'),
 ]
 

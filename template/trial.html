@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}MyProBuddy | TRIAL{% endblock %}
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="c_data" id="c_data">
+        <!-- <button type="button" id="c_data_sub">Send</button> -->
+        <input type="text" id="cc_data" style="color: white;"></p>
+    </form>
+    <script>
+        document.getElementById("c_data").addEventListener("input", function(e){
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'/c_data',
+                data:{
+                    c_data:$('#c_data').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                },
+                success: function(data){
+                    document.getElementById('cc_data').value = data;
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'amrish/index.html' %}
 {% load static %}
 {% block title %}MyProBuddy | Event Page{% endblock %}
 {% block main %}
@@ -27,35 +27,34 @@
         <div class="container">
             <div class="section-top__inner">
                 <div class="section-top__content section-top-content">
-                    <p class="section-top-content__date">
-                        <input type="datetime-local" name="from_event_datetime" id="from_event_datetime" placeholder="From">
-                        <input type="datetime-local" name="to_event_datetime" id="to_event_datetime" placeholder="To">
+                    <p class="section-top-content__date" id="event_title_date" contenteditable>
+                        Feb 27 – Mar 2, 2023
                     </p>
-                    <h1 class="section-top-content__title title">
+                    <h1 class="section-top-content__title title" id="event_title" contenteditable>
                         Big Global <br>
                         E-Commerce Conference ‘23
                     </h1>
                     <ul class="section-top-content__list card-list">
                         <li class="card-list__item">
-                            <p class="card-list__text">
+                            <p class="card-list__text" id="event_title_location" contenteditable>
                                 New York, NY, United States
                             </p>
                         </li>
                         <li class="card-list__item">
-                            <p class="card-list__text">
+                            <p class="card-list__text" id="event_organizer_name" contenteditable>
                                 IT Education Centre
                             </p>
                         </li>
                     </ul>
-                    <div class="section-top-content__buttons">
+                    <!-- <div class="section-top-content__buttons">
                         <a class="section-top-content__buttons-link section-top-content__buttons-link--purple"
                             href="#">
                             Add to Calendar
                         </a>
-                        <a class="section-top-content__buttons-link" href="#">
+                        <a class="section-top-content__buttons-link" >
                             Visit Official Website
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="section-top__img">
                     <img class="section-top__img-image" src="{%  static 'img/new/image%2085.jpg' %}" alt="img">
@@ -67,10 +66,10 @@
         <div class="container">
             <div class="event__inner">
                 <section class="event__about about-event">
-                    <div class="about-event__box about-event-box">
-                        <h2 class="about-event-box__title">
-                            About the Event
-                        </h2>
+                    <h2 class="about-event-box__title">
+                        About the Event
+                    </h2>
+                    <div class="about-event__box about-event-box" id="event_about" contenteditable contenteditable>
                         <p class="about-event-box__text">
                             The Big Global E-Commerce Conference 2023 is set to take place in New York, bringing
                             together some of the biggest players in the industry. As one of the most anticipated
@@ -96,12 +95,6 @@
                             e-commerce industry who wants to stay ahead of the game and make valuable
                             connections.
                         </p>
-                        <div class="about-event-box__images">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-19.jpg' %}" alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-24.jpg' %}" alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-27.jpg' %}" alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-28.jpg' %}" alt="img">
-                        </div>
                         <p class="about-event-box__text">
                             This conference will provide an excellent opportunity for attendees to network with
                             industry leaders and experts from around the world. With a wide range of keynote
@@ -125,16 +118,14 @@
                             Venue Map
                         </h2>
                         <div class="about-event-box__map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5580.942896395202!2d-74.20119064247119!3d40.646364222082525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d8d40472a8d%3A0xbb866b2a9ab54b44!2sNewpark%20Estates!5e0!3m2!1suk!2sus!4v1688114345357!5m2!1suk!2sus"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <input type="text" name="event_location_map" id="event_location_map" placeholder="Map Iframe"><br>
+                            <br>
                         </div>
                     </div>
                 </section>
                 <aside class="event__aside event-aside">
                     <p class="event-aside__price">
-                        $100
+                        ₹<span id="event_price" contenteditable>1900</span>
                     </p>
                     <div class="event-aside__box event-aside-box">
                         <h4 class="event-aside-box__title">
@@ -144,7 +135,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Date
-                                    <span>
+                                    <span id="event_date" contenteditable>
                                         July 14,2023
                                     </span>
                                 </p>
@@ -152,7 +143,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Time
-                                    <span>
+                                    <span id="event_timing" contenteditable>
                                         9:30 am - 6:00 pm
                                     </span>
                                 </p>
@@ -167,7 +158,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Name
-                                    <span>
+                                    <span id="event_organization_name" contenteditable>
                                         IT Education Centre
                                     </span>
                                 </p>
@@ -175,7 +166,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Email
-                                    <a href="mailto:">
+                                    <a href="mailto:" id="event_organizer_email" contenteditable>
                                         it.edu.usa@gmail.com
                                     </a>
                                 </p>
@@ -183,7 +174,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Phone
-                                    <a href="tel:">
+                                    <a href="tel:" id="event_phone" contenteditable>
                                         718-564-2971
                                     </a>
                                 </p>
@@ -191,7 +182,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Website
-                                    <a href="#">
+                                    <a href="#" id="event_website" contenteditable>
                                         it.educentre.com
                                     </a>
                                 </p>
@@ -206,7 +197,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Place
-                                    <span>
+                                    <span id="event_venue_place" contenteditable>
                                         Startup Offices
                                     </span>
                                 </p>
@@ -214,7 +205,7 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Location
-                                    <a href="#">
+                                    <a id="event_venue_location" contenteditable>
                                         448 Greenwich St New York, NY 10013
                                     </a>
                                 </p>
@@ -222,18 +213,48 @@
                             <li class="event-aside-box__list-item">
                                 <p class="event-aside-box__list-text">
                                     Phone
-                                    <a href="tel:">
+                                    <a href="tel:" id="event_venue_phone" contenteditable>
                                         718-911-3473
                                     </a>
                                 </p>
                             </li>
                         </ul>
                     </div>
-                    <a class="event-aside__link" href="#">
-                        Register
+                    <a class="event-aside__link" id="add_event">
+                        Create Event
                     </a>
                 </aside>
             </div>
         </div>
     </section>
+    <script>
+        document.getElementById("add_event").addEventListener("click", function(e){
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'/amrish/add_event',
+                data:{
+                    event_title_date:$('#event_title_date').text(),
+                    event_title:$('#event_title').text(),
+                    event_title_location:$('#event_title_location').text(),
+                    event_organization_name:$('#event_organization_name').text(),
+                    event_about:$('#event_about').text(),
+                    event_price:$('#event_price').text(),
+                    event_date:$('#event_date').text(),
+                    event_timing:$('#event_timing').text(),
+                    event_organizer_email:$('#event_organizer_email').text(),
+                    event_phone:$('#event_phone').text(),
+                    event_website:$('#event_website').text(),
+                    event_venue_place:$('#event_venue_place').text(),
+                    event_venue_location:$('#event_venue_location').text(),
+                    event_venue_phone:$('#event_venue_phone').text(),
+                    event_location_map:$('#event_location_map').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                },
+                success: function(context){
+                    alert(context);
+                }
+            });
+        });
+    </script>
 {% endblock %}

@@ -61,12 +61,16 @@ def view_course(request,id):
 
 @user_passes_test(is_buddy)
 def register_course(request,id):
-    user_course=db_users.find_one({"username":request.user.username})['courses']
+    try:user_course=db_users.find_one({"username":request.user.username})['courses']
+    except:pass
     if id in user_course:
         print("Already Enrolled")
     else:
         db_users.find_one_and_update({"username":request.user.username},{"$push":{"courses":id}})
         context={'course':db_courses.find_one({"oid":id})}
+        course = db_courses.find_one({"oid":id})
+        course['course_enrolled'] = int(course['course_enrolled'])+1
+        db_courses.find_one_and_update({"oid":id},{"$set":course})
     return render(request,'buddy/courses-page.html',context)
 
 @user_passes_test(is_buddy)

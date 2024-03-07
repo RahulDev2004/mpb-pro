@@ -27,17 +27,17 @@
     <div class="container">
         <div class="section-top__inner">
             <div class="section-top__content section-top-content">
-                <p class="section-top-content__suptext" contenteditable>
+                <!-- <p class="section-top-content__suptext">
                     UX/UI
-                </p>
-                <h1 class="section-top-content__title title" contenteditable id="">
-                    Designing a Low Prototype in Figma
-                </h1>
+                </p> -->
+                <input type="text" name="course_category" id="course_category" placeholder="Course Category example: UI/UX">
+                <br>
+                <textarea name="course_inner_title" id="course_inner_title" cols="30" rows="6" style="font-size: 70px;" placeholder="Title"></textarea><br>
                 <ul class="section-top-content__list card-list">
                     <li class="card-list__item">
                         <p class="card-list__rait">
                             <span>
-                                4.5
+                                <input type="text" style="width: 50px;" name="course_rating" id="course_rating">
                             </span>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -56,26 +56,28 @@
                     </li>
                     <li class="card-list__item">
                         <p class="card-list__text">
-                            7 Lessons
+                            <input type="text" style="width: 50px;" name="course_contains" id="course_contains"> Lessons
                         </p>
                     </li>
                     <li class="card-list__item">
                         <p class="card-list__text">
-                            48 Students
+                            <input type="text" style="width: 50px;" name="course_enrolled" id="course_enrolled">
+                            Students
                         </p>
                     </li>
                     <li class="card-list__item">
                         <a class="card-list__link" href="#">
-                            by Anthony Clark
-                            <img class="card-list__link-img" src="{% static 'img/member-icon-16.png' %}" alt="img">
+                            by 
+                            <input type="text" style="width: 100px;" name="course_author" id="course_author" placeholder="Author">
+                            <!-- <img class="card-list__link-img" src="{% static 'img/member-icon-16.png' %}" alt="img"> -->
                         </a>
                     </li>
                 </ul>
-                <div class="section-top-content__buttons">
+                <!-- <div class="section-top-content__buttons">
                     <a class="section-top-content__buttons-link" href="#">
                         Ask a Question
                     </a>
-                </div>
+                </div> -->
             </div>
             <div class="section-top__img">
                 <img class="section-top__img-image" src="{% static 'img/course-img-3.jpg' %}" alt="img">
@@ -109,29 +111,7 @@
                         <h2 class="courses-section-overview-box__title">
                             About This Course
                         </h2>
-                        <p class="courses-section-overview-box__text">
-                            Build Wireframes and Low-Fidelity Prototypes is the third course in a
-                            certificate
-                            program that will equip you with the skills you need to apply to entry-level
-                            jobs in
-                            user experience (UX) design. In this course, you’ll continue to design a mobile
-                            app
-                            for your professional UX portfolio. You’ll start by creating storyboards and
-                            getting
-                            familiar with the basics of drawing. Then, you'll create paper wireframes and
-                            digital wireframes using the design tool Figma. You’ll also create a paper
-                            prototype
-                            and a digital low-fidelity prototype in Figma.
-
-                        </p>
-                        <p class="courses-section-overview-box__text">
-                            Current UX designers and researchers at Google will serve as your instructors,
-                            and
-                            you will complete hands-on activities that simulate real-world UX design
-                            scenarios.
-                            Learners who complete the seven courses in this certificate program should be
-                            equipped to apply for entry-level jobs as UX designers.
-                        </p>
+                        <textarea type="text" name="course_about" id="course_about" placeholder="Write about this course..." /></textarea>
                         <div class="courses-section-overview-box__img">
                             <img class="courses-section-overview-box__img-image"
                                 src="{% static 'img/new/course-img-7.jpg' %}" alt="img">
@@ -141,50 +121,24 @@
                         <h2 class="courses-section-overview-box__title">
                             Who This Course is for
                         </h2>
-                        <p class="courses-section-overview-box__text">
-                            Learners design and justify small-scale positive interventions to enhance
-                            specific
-                            aspects of their personal wellbeing based on the skills acquired in each course
-                            of
-                            the specialization. Personal reflections are implemented provide learners with
-                            the
-                            skills to impact their personal and professional lives.
-                        </p>
+                        <textarea type="text" name="course_for" id="course_for" placeholder="Course For"></textarea>
                     </div>
                     <div class="courses-section-overview__box courses-section-overview-box">
                         <h2 class="courses-section-overview-box__title">
                             Skills You Get
                         </h2>
                         <ul class="courses-section-overview-box__list">
-                            <li class="courses-section-overview-box__list-item">
-                                Create storyboards to come up with ideas about solutions to user needs.
-                            </li>
-                            <li class="courses-section-overview-box__list-item">
-                                Build paper prototypes to create interactive designs.
-                            </li>
-                            <li class="courses-section-overview-box__list-item">
-                                Create wireframes on paper and digitally in the design tool Figma.
-                            </li>
-                            <li class="courses-section-overview-box__list-item">
-                                Design low-fidelity prototypes in Figma.
-                            </li>
+                            <textarea type="text" name="course_skills" id="course_skills" placeholder="Course Skills"></textarea>
                         </ul>
                     </div>
                     <div class="courses-section-overview__box courses-section-overview-box">
                         <h2 class="courses-section-overview-box__title">
                             Requirements
                         </h2>
-                        <p class="courses-section-overview-box__text">
-                            To be successful in this course, you should complete the previous two courses in
-                            this certificate program, or have an ability to conduct user research to inform
-                            the
-                            creation of empathy maps, personas, user stories, user journey maps, problem
-                            statements, and value propositions. You will also need paper and a pen or
-                            pencil.
-                        </p>
+                        <textarea type="text" name="course_requirements" id="course_requirements" placeholder="Course Requirements"></textarea>
                     </div>
                 </section>
-                <section class="courses-section__comment comment">
+                <!-- <section class="courses-section__comment comment">
                     <div class="comment__inner">
                         <h2 class="comment__title">
                             Leave a Comment
@@ -197,7 +151,7 @@
                             </button>
                         </form>
                     </div>
-                </section>
+                </section> -->
             </div>
             <div class="courses-section__wrapper" id="1">
                 <section class="courses-section__curriculum courses-section-curriculum">
@@ -1687,8 +1641,8 @@
             </div>
             <aside class="courses-section__aside courses-section-aside">
                 <div class="courses-section-aside__aside-cost-info aside-cost-info">
-                    <p class="aside-cost-info__price">
-                        $29
+                    <p class="aside-cost-info__price ">
+                        <input style="color: black;" type="text" name="course_price" id="course_price" placeholder="Course Price(in $)">
                     </p>
                     <ul class="aside-cost-info__list">
                         <li class="aside-cost-info__list-item">
@@ -1711,7 +1665,7 @@
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                7
+                                <input type="text" name="course_contains" id="course_contains" placeholder="Number of lessons in the course..."/>
                             </p>
                         </li>
                         <li class="aside-cost-info__list-item">
@@ -1726,11 +1680,11 @@
                                         stroke-linejoin="round" />
                                 </svg>
                                 <span>
-                                    Level
+                                   Level
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                Beginner
+                                <input type="text" name="course_level" id="course_level" placeholder="Level">
                             </p>
                         </li>
                         <li class="aside-cost-info__list-item">
@@ -1759,7 +1713,7 @@
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                10 Weeks
+                                <input type="text" name="course_duration" id="course_duration" placeholder="Duration (week)">
                             </p>
                         </li>
                         <li class="aside-cost-info__list-item">
@@ -1775,7 +1729,7 @@
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                English
+                                <input type="text" name="course_language" id="course_language" placeholder="Language">
                             </p>
                         </li>
                         <li class="aside-cost-info__list-item">
@@ -1794,7 +1748,7 @@
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                Yes
+                                <input type="text" name="course_certificate" id="course_certificate" placeholder="Yes or No">
                             </p>
                         </li>
                         <li class="aside-cost-info__list-item">
@@ -1823,24 +1777,7 @@
                                 </span>
                             </p>
                             <p class="aside-cost-info__list-text">
-                                30
-                            </p>
-                        </li>
-                        <li class="aside-cost-info__list-item">
-                            <p class="aside-cost-info__list-text">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M19.439 7.85005C19.39 8.17205 19.4981 8.49805 19.7281 8.72805L21.296 10.296C21.766 10.766 22.0021 11.383 22.0021 12C22.0021 12.617 21.767 13.233 21.296 13.704L19.685 15.315C19.5768 15.4232 19.4447 15.5045 19.2993 15.5524C19.154 15.6004 18.9994 15.6136 18.848 15.591C18.378 15.521 18.046 15.111 17.88 14.666C17.7344 14.2728 17.4922 13.9226 17.1758 13.6474C16.8593 13.3723 16.4788 13.1811 16.0692 13.0915C15.6595 13.0019 15.2339 13.0168 14.8315 13.1347C14.4291 13.2526 14.0628 13.4698 13.7663 13.7663C13.4698 14.0628 13.2526 14.4291 13.1347 14.8315C13.0168 15.2339 13.0019 15.6595 13.0915 16.0692C13.1811 16.4788 13.3723 16.8593 13.6474 17.1758C13.9226 17.4922 14.2728 17.7344 14.666 17.88C15.112 18.046 15.521 18.377 15.591 18.848C15.6137 18.9994 15.6005 19.154 15.5526 19.2994C15.5046 19.4447 15.4233 19.5768 15.315 19.685L13.705 21.295C13.4814 21.5194 13.2157 21.6974 12.9231 21.8187C12.6305 21.94 12.3168 22.0023 12 22.0021C11.6835 22.0025 11.37 21.9403 11.0776 21.8191C10.7852 21.698 10.5195 21.5202 10.296 21.296L8.72805 19.7281C8.61472 19.6145 8.47634 19.5291 8.32403 19.4788C8.17172 19.4284 8.00972 19.4145 7.85105 19.438C7.35805 19.512 7.01105 19.942 6.83105 20.406C6.68017 20.7933 6.43513 21.1368 6.11809 21.4056C5.80105 21.6743 5.42202 21.8598 5.01528 21.9452C4.60853 22.0306 4.18692 22.0132 3.78857 21.8947C3.39022 21.7761 3.02771 21.5602 2.73383 21.2663C2.43995 20.9724 2.22397 20.6099 2.10543 20.2115C1.98689 19.8132 1.96954 19.3916 2.05494 18.9848C2.14033 18.5781 2.32579 18.199 2.59452 17.882C2.86325 17.565 3.20679 17.3199 3.59405 17.169C4.05805 16.989 4.48805 16.642 4.56105 16.149C4.58476 15.9905 4.57097 15.8285 4.52079 15.6762C4.4706 15.5239 4.38541 15.3855 4.27205 15.272L2.70405 13.704C2.4799 13.4805 2.30213 13.2149 2.18097 12.9225C2.05981 12.6301 1.99765 12.3166 1.99805 12C1.99805 11.383 2.23405 10.766 2.70405 10.296L4.23005 8.77005C4.47005 8.53005 4.81105 8.41705 5.14705 8.46705C5.66205 8.54405 6.02405 8.99505 6.22005 9.47705C6.37575 9.8588 6.62344 10.1961 6.94106 10.459C7.25869 10.7218 7.63639 10.902 8.04052 10.9835C8.44466 11.0651 8.86269 11.0454 9.25737 10.9263C9.65206 10.8071 10.0112 10.5922 10.3027 10.3007C10.5942 10.0092 10.8091 9.65006 10.9283 9.25537C11.0474 8.86069 11.0671 8.44266 10.9855 8.03852C10.904 7.63439 10.7238 7.25669 10.461 6.93906C10.1981 6.62144 9.8608 6.37375 9.47905 6.21805C8.99705 6.02205 8.54605 5.66005 8.46905 5.14505C8.41905 4.80905 8.53105 4.46905 8.77205 4.22805L10.297 2.70305C10.5205 2.4792 10.786 2.30168 11.0782 2.1807C11.3705 2.05972 11.6837 1.99765 12 1.99805C12.617 1.99805 13.234 2.23405 13.704 2.70405L15.272 4.27205C15.502 4.50205 15.828 4.61005 16.149 4.56205C16.642 4.48805 16.989 4.05805 17.169 3.59405C17.3199 3.20679 17.565 2.86325 17.882 2.59452C18.199 2.32579 18.5781 2.14033 18.9848 2.05494C19.3916 1.96954 19.8132 1.98689 20.2115 2.10543C20.6099 2.22397 20.9724 2.43995 21.2663 2.73383C21.5602 3.02771 21.7761 3.39022 21.8947 3.78857C22.0132 4.18692 22.0306 4.60853 21.9452 5.01528C21.8598 5.42202 21.6743 5.80105 21.4056 6.11809C21.1368 6.43513 20.7933 6.68017 20.406 6.83105C19.942 7.01105 19.512 7.35705 19.439 7.85005Z"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <span>
-                                    Quizzes
-                                </span>
-                            </p>
-                            <p class="aside-cost-info__list-text">
-                                5
+                                <input type="text" name="course_enrolled" id="course_enrolled" placeholder="No of Students Enrolled">
                             </p>
                         </li>
                     </ul>
