@@ -50,7 +50,7 @@
                             href="#">
                             Add to Calendar
                         </a>
-                        <a class="section-top-content__buttons-link" href="#">
+                        <a class="section-top-content__buttons-link" href="https://{{event.event_website}}">
                             Visit Official Website
                         </a>
                     </div>
@@ -69,58 +69,9 @@
                         <h2 class="about-event-box__title">
                             About the Event
                         </h2>
-                        <p class="about-event-box__text">
-                            The Big Global E-Commerce Conference 2023 is set to take place in New York, bringing
-                            together some of the biggest players in the industry. As one of the most anticipated
-                            events in the e-commerce world, this conference promises to be an inspiring event
-                            for all attendees. Attendees can expect to learn about the latest trends,
-                            strategies, and technologies that are driving the e-commerce industry forward.
-                        </p>
-                        <p class="about-event-box__text">
-                            This
-                            conference will provide an excellent opportunity for attendees to network with
-                            industry leaders and experts from around the world. With a wide range of keynote
-                            speakers, panel discussions, and workshops, attendees will have the chance to learn
-                            from some of the most knowledgeable and experienced professionals in the field. The
-                            conference will also offer a platform for vendors and service providers to showcase
-                            their products and services to potential clients.
-                        </p>
-                        <p class="about-event-box__text">
-                            In addition to the educational
-                            and networking opportunities, the Big Global E-Commerce Conference 2023 promises to
-                            be a fun and exciting event. Attendees can look forward to social events,
-                            entertainment, and other activities that will make their time in New York memorable.
-                            Overall, this conference is a must-attend event for anyone involved in the
-                            e-commerce industry who wants to stay ahead of the game and make valuable
-                            connections.
-                        </p>
-                        <div class="about-event-box__images">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-19.jpg"
-                                alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-24.jpg"
-                                alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-27.jpg"
-                                alt="img">
-                            <img class="about-event-box__images-img" src="{%  static 'img/group-img-28.jpg"
-                                alt="img">
-                        </div>
-                        <p class="about-event-box__text">
-                            This conference will provide an excellent opportunity for attendees to network with
-                            industry leaders and experts from around the world. With a wide range of keynote
-                            speakers, panel discussions, and workshops, attendees will have the chance to learn
-                            from some of the most knowledgeable and experienced professionals in the field. The
-                            conference will also offer a platform for vendors and service providers to showcase
-                            their products and services to potential clients.
-                        </p>
-                        <p class="about-event-box__text">
-                            In addition to the educational
-                            and networking opportunities, the Big Global E-Commerce Conference 2023 promises to
-                            be a fun and exciting event. Attendees can look forward to social events,
-                            entertainment, and other activities that will make their time in New York memorable.
-                            Overall, this conference is a must-attend event for anyone involved in the
-                            e-commerce industry who wants to stay ahead of the game and make valuable
-                            connections.
-                        </p>
+                        {% for context in event.event_about %}
+                            <p class="about-event-box__text" id="event_about">{{context}}</p>
+                        {% endfor %}
                     </div>
                     <div class="about-event__box about-event-box">
                         <h2 class="about-event-box__title">
@@ -128,7 +79,7 @@
                         </h2>
                         <div class="about-event-box__map">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5580.942896395202!2d-74.20119064247119!3d40.646364222082525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24d8d40472a8d%3A0xbb866b2a9ab54b44!2sNewpark%20Estates!5e0!3m2!1suk!2sus!4v1688114345357!5m2!1suk!2sus"
+                                src="{{event.event_location_map}}"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>

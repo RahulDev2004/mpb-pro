@@ -44,63 +44,35 @@ def courses(request):
 
 @user_passes_test(is_amrish)
 def create_course(request):
-    print("getting")
-    if request.method == 'POST':
-        course_title  = request.POST["course_title"]
-        course_description  = request.POST["course_description"]
-        course_price  = request.POST["course_price"]
-        course_duration  = request.POST["course_duration"]
-        course_category  = request.POST["course_category"]
-        course_type  = request.POST["course_type"]
-        course_author  = request.POST["course_author"]
-        course_enrolled  = request.POST["course_enrolled"]
-        course_about  = request.POST["course_about"]
-        course_for  = request.POST["course_for"]
-        course_skills  = request.POST["course_skills"]
-        course_requirements  = request.POST["course_requirements"]
-        course_certificate  = request.POST["course_certificate"]
-        course_language  = request.POST["course_language"]
-        course_level  = request.POST["course_level"]
-        course_inner_title  = request.POST["course_inner_title"]
-        course_rating  = request.POST["course_rating"]
-        course_contains  = request.POST["course_contains"]
-        course_tags  = request.POST["course_tags"]
-        # course_image  = request.POST["course_image"]
-        # course_about_image = request.POST["course_about_image"]
-        
-        course_skills=course_skills.split("<li>")
-        for i in range(len(course_skills)):
-            course_skills[i]=course_skills[i].split("</li>")[0]
-            
-        course_requirements=course_requirements.split("<li>")
-        for i in range(len(course_requirements)):
-            course_requirements[i]=course_requirements[i].split("</li>")[0]
-        course={
-            "oid": str(course_inner_title).replace(" ","-").lower()+"-"+str(course_duration).replace(" ","-").lower(),
-            "course_title": course_title,
-            "course_description": course_description,
-            "course_price": course_price,
-            "course_duration": course_duration,
-            "course_category": course_category,
-            "course_type": course_type,
-            "course_author": course_author,
-            "course_enrolled": course_enrolled,
-            "course_about": course_about,
-            "course_for": course_for,
-            "course_skills": course_skills,
-            "course_requirements": course_requirements,
-            "course_certificate": course_certificate,
-            "course_language": course_language,
-            "course_level": course_level,
-            "course_inner_title": course_inner_title,
-            "course_rating": course_rating,
-            "course_contains": course_contains,
-            "course_tags": course_tags,
-            "course_image": "url",
-            "course_about_image": "url",
-            "last_updated": datetime.datetime.now()}
-        db_courses.insert_one(course)
     return render(request, 'amrish/courses-create.html')
+
+def add_course(request):
+    course_about=str(request.POST.get('course_about')).strip().replace("\n","").split("<br>")
+    course={
+        "oid": str(request.POST.get("course_inner_title")).replace(" ","-").lower()+"-"+str(request.POST.get("course_duration")).replace(" ","-").lower(),
+        "course_category": request.POST.get("course_category"),
+        "course_title": request.POST.get("course_title"),
+        "course_rating": request.POST.get("course_rating"),
+        "course_lessons": request.POST.get("course_lessons"),
+        "course_enrolled": request.POST.get("course_enrolled"),
+        "course_author": request.POST.get("course_author"),
+        "course_about": course_about,
+        "course_for": request.POST.get("course_for"),
+        "course_skills": request.POST.get("course_skills"),
+        "course_requirements": request.POST.get("course_requirements"),
+        "course_price": request.POST.get("course_price"),
+        "course_level": request.POST.get("course_level"),
+        "course_duration": request.POST.get("course_duration"),
+        "course_language": request.POST.get("course_language"),
+        "course_certificate": request.POST.get("course_certificate"),
+        "course_type": request.POST.get("course_type"),
+        "course_inner_title": request.POST.get("course_inner_title"),
+        "course_tags": request.POST.get("course_tags"),
+        "course_image": "url",
+        "course_about_image": "url",
+        "last_updated": timenow()
+    }
+    db_courses.insert_one(course)
 
 def edit_course(request,id):
     context={'course':db_courses.find_one({"oid":id})}
@@ -147,9 +119,9 @@ def create_event(request):
     return render(request, 'amrish/events-create.html')
 
 def add_event(request):
-    event_about=str(request.POST.get('event_about')).strip().replace("\n","<br/>")
+    event_about=str(request.POST.get('event_about')).strip().replace("\n","").split("<br>")
+    event_map = str(request.POST.get('event_location_map')).strip().split("src=")[1].split(" ")[0].replace('"','')
     start,end=convert_event_datetime(date_string=str(request.POST.get('event_title_date')).strip(),time_string=str(request.POST.get('event_timing')).strip())
-    print(start,end)
     if(str(request.POST.get('event_title')).strip()!=None):
         event={
             "oid":str(str(request.POST.get('event_title')).strip()+"-"+str(request.POST.get('event_date')).strip()).replace(" ","-").replace(",","-").lower(),
@@ -167,7 +139,7 @@ def add_event(request):
             "event_venue_place":str(request.POST.get('event_venue_place')).strip(),
             "event_venue_location":str(request.POST.get('event_venue_location')).strip(),
             "event_venue_phone":str(request.POST.get('event_venue_phone')).strip(),
-            "event_location_map":str(request.POST.get('event_location_map')).strip(),
+            "event_location_map":event_map,
             "event_start":start,
             "event_end":end,
             "event_dead":False,
@@ -180,6 +152,7 @@ def add_event(request):
 
 @user_passes_test(is_amrish)
 def events_page(request,id):
+    print(db_events.find_one({"oid":id})["event_about"])
     event={'event':db_events.find_one({"oid":id})}
     return render(request, 'amrish/events-page.html',event)
 

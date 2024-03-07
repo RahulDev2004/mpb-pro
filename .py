@@ -1,19 +1,19 @@
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+# from pymongo.mongo_client import MongoClient
+# from pymongo.server_api import ServerApi
 
-url = "mongodb+srv://pro_user:rkwyrUiPnjjBsssg@cluster0.edxis.mongodb.net/?retryWrites=true&w=majority"
+# url = "mongodb+srv://pro_user:rkwyrUiPnjjBsssg@cluster0.edxis.mongodb.net/?retryWrites=true&w=majority"
 
-client = MongoClient(url, server_api=ServerApi('1'))
+# client = MongoClient(url, server_api=ServerApi('1'))
 
-db = client.mpb
-db_user = db.users
-db_courses = db.courses
-db_events = db.events
+# db = client.mpb
+# db_user = db.users
+# db_courses = db.courses
+# db_events = db.events
 
-db_events.delete_many(filter={})
+# db_events.delete_many(filter={})
 
 # import datetime
-
+# print(str(datetime.datetime.now()).replace(":","").replace("-","").replace(" ","").split('.')[0][:-2])
 # def convert_event_datetime(date_string, time_string):
 #     def format_date(date_string):
 #         mon=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]

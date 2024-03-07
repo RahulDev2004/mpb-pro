@@ -20,7 +20,7 @@ db_events = db.events
 db_blogs = db.blogs
 
 def timenow():
-    return str(datetime.datetime.now()).replace(":","").replace(".","").replace("-","").replace(" ","")
+    return int(str(datetime.datetime.now()).replace(":","").replace("-","").replace(" ","").split('.')[0][:-2])
 
 def convert_event_datetime(date_string, time_string):
     def format_date(date_string):
